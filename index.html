@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<!-- saved from url=536c6323d439596e766f055498e775e4.jpg -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Full Screen Background Video</title>
+
+    
+    <style>
+            #bgVideo {
+            position: relative;
+            top: 0;
+            left: 0;
+            min-width: 100vw; 
+            min-height: 100vh;
+            width: 100%;
+            height: 120%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+       
+        img.content-wrapper {
+            position: relative; 
+            width: 100%;
+        }
+            
+
+        button.text-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            border-radius: 10px;
+            transition: color 0.5s ease;
+            font-family: 'Cambria Cochin', Georgia, Times, 'Times New Roman', serif;
+        }
+       
+
+        button.text-button1 {
+            position: fixed;
+            top: 20px;
+            right: 160px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            border-radius: 10px;
+            transition: color 0.5s ease;
+            font-family: 'Cambria Cochin', Georgia, Times, 'Times New Roman', serif;
+        }
+
+
+        button.text-button2 {
+            position: fixed;
+            top: 20px;
+            right: 295px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: rgba(0, 0, 0, 0);
+            color: rgb(255, 255, 255);
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            border-radius: 10px;
+            transition: color 0.5s ease;
+            font-family: 'Cambria Cochin', Georgia, Times, 'Times New Roman', serif;
+        }
+
+
+        button.text-button3 {
+            position: fixed;
+            top: 20px;
+            right: 394px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            border-radius: 10px;
+            transition: color 0.5s ease;
+            font-family: 'Cambria Cochin', Georgia, Times, 'Times New Roman', serif;
+        }
+
+        button.text-button:hover,
+        button.text-button1:hover,
+        button.text-button2:hover,
+        button.text-button3:hover {
+            color: red; 
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+    @keyframes center-scale-click {
+       0% {
+            transform: scale(1);
+        }
+       50% {
+            transform: scale(1.06);
+        }
+       100% {
+            transform: scale(1);
+        }
+     }
+
+.clicked-scale {
+    animation: center-scale-click 0.4s ease-out 1;
+    
+    transform-origin: center; 
+}
+
+
+        header.text-overlay { 
+            position: absolute;
+            top: 119vh;
+            left: 50%;
+            transform: translate(-100%, 50%);
+            z-index: 10;
+            width: 80%; 
+            text-align: center;
+            color: #ab0000; 
+            font-size: 400%;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            pointer-events: none;
+            font-family: Audiowide,
+        }
+    
+        .story-content {
+            position: absolute;
+            top: 135vh;
+            left: 7%; 
+            width: 60%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+        }
+
+        .story-content1 {
+            position: absolute;
+            top: 150vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+
+        .story-content2 {
+            position: absolute;
+            top: 156vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .story-contentAB {
+            position: absolute;
+            top: 165vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #000000; 
+            font-size: 130%;
+        }
+
+        .story-content3 {
+            position: absolute;
+            top: 168vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+
+        .story-content4 {
+            position: absolute;
+            top: 174vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+
+        .story-content5 {
+            position: absolute;
+            top: 183vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+
+        .story-content6 {
+            position: absolute;
+            top: 189vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+
+        .story-content7 {
+            position: absolute;
+            top: 198vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+
+        .story-content8 {
+            position: absolute;
+            top: 204vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+
+        .story-content9 {
+            position: absolute;
+            top: 216vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .story-content10 {
+            position: absolute;
+            top: 222vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .story-content11 {
+            position: absolute;
+            top: 234vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .story-content12 {
+            position: absolute;
+            top: 240vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .story-content13 {
+            position: absolute;
+            top: 252vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .story-content14 {
+            position: absolute;
+            top: 258vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .story-content15 {
+            position: absolute;
+            top: 270vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .story-content16 {
+            position: absolute;
+            top: 276vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .story-content17 {
+            position: absolute;
+            top: 288vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .story-content18 {
+            position: absolute;
+            top: 294vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .Character-content {
+            position: absolute;
+            top: 307vh;
+            left: 52.5%;
+            transform: translate(-100%, 50%);
+            z-index: 10;
+            width: 80%; 
+            text-align: center;
+            color: #ab0000; 
+            font-size: 400%;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            pointer-events: none;
+            font-family: Audiowide,
+        }
+        .Character-content1 {
+            position: absolute;
+            top: 353vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #000000; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .Gameplay-content {
+            position: absolute;
+            top: 400vh;
+            left: 52.5%;
+            transform: translate(-100%, 50%);
+            z-index: 10;
+            width: 80%; 
+            text-align: center;
+            color: #ab0000; 
+            font-size: 400%;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            pointer-events: none;
+            font-family: Audiowide,
+        }
+        .Gameplay-content1 {
+            position: absolute;
+            top: 417vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .Gameplay-content2 {
+            position: absolute;
+            top: 424vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .Gameplay-content3 {
+            position: absolute;
+            top: 427vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .Gameplay-content4 {
+            position: absolute;
+            top: 433vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .Gameplay-content5 {
+            position: absolute;
+            top: 439vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .Gameplay-content6 {
+            position: absolute;
+            top: 445vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .Gameplay-content7 {
+            position: absolute;
+            top: 451vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .Gameplay-content8 {
+            position: absolute;
+            top: 457vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .Gameplay-content9 {
+            position: absolute;
+            top: 460vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .Gameplay-content10 {
+            position: absolute;
+            top: 466vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .Gameplay-content11 {
+            position: absolute;
+            top: 472vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .Gameplay-content12 {
+            position: absolute;
+            top: 478vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 150%;
+            font-family: serif;
+            font-weight: 700;
+        }
+        .Gameplay-content13 {
+            position: absolute;
+            top: 484vh;
+            left: 7%; 
+            width: 85%; 
+            text-align: left;
+            color: #ffffff; 
+            font-size: 130%;
+        }
+        .one-image-container {
+            position: absolute;
+            top: 325vh;
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: 90%;
+            text-align: center;
+            max-width: 2200px; 
+            overflow: hidden;
+        }
+        #image-track {
+            display: flex;
+            overflow: hidden;
+            width: 100%; 
+            border-radius: 15px;
+            position: relative;
+        }
+        .slider-image {
+            min-width: 100%;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slider-image.active {
+            opacity: 1;
+            position: relative;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .prev-btn {
+            left: 10px;
+        }
+        .next-btn {
+            right: 10px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        [data-lang-key] {
+            transition: opacity 0.25s ease-in-out;
+            opacity: 1;
+    }
+        .fade-out {
+            opacity: 0 !important;
+    }
+    </style>
+</head>
+<body>
+
+    <div id="background-layers-wrapper">
+        <video autoplay="" muted="" loop="" id="bgVideo">
+            <source src="trim.mp4" type="video/mp4">
+        </video>
+        
+        <img id="main-image" src="536c6323d439596e766f055498e775e4.jpg" alt="Background Content Image" width="140%">
+        <header class="text-overlay" none="StoryTitle">
+            Story
+        </header>
+        <div id="story-wrapper">
+        <div class="story-content" data-lang-key="Intro">
+            ในปี 2004 ลีออน เอส เคนเนดี อดีตตำรวจผู้รอดชีวิตจากเหตุการณ์เมืองแร็คคูน และปัจจุบันเป็นเจ้าหน้าที่พิเศษของรัฐบาลสหรัฐ ได้รับมอบหมายให้เดินทางไปยังประเทศสเปนในภารกิจที่ไม่มีใครอยากทำ นั่นคือ การออกตามหาแอชลีย์ เกรแฮม บุตรสาวของประธานาธิบดีที่ถูกลักพาตัวไป
+        </div>
+        <div class="story-content1" data-lang-key="Chap1Title">
+            บทที่ 1 - หมู่บ้านต้องคำสาป
+        </div>
+        <div class="story-content2" data-lang-key="Chap1Body">
+            ลีออน เอส เคนเนดี ถูกรัฐบาลส่งให้มาช่วยตัวประกันคือ แอชลีย์ เกรแฮม ลูกสาวประธานาธิบดีสหรัฐ เขาเดินทางมายังหมู่บ้านห่างไกลในยุโรป พร้อมตำรวจท้องถิ่นแต่ถูกชาวบ้านที่คลุ้มคลั่งโจมตีอย่างไร้เหตุผล ลีออนต้องหลบหนีและต่อสู้จนกระทั่งเสียงระฆังของโบสถ์ดังขึ้น ชาวบ้านทุกคนหยุดโจมตีพร้อมกันราวกับถูกควบคุม ทำให้ลีออนเริ่มสงสัยว่าในหมู่บ้านนี้มีบางสิ่งเหนือธรรมชาติปกคลุมอยู่
+        </div>
+        <div class="story-contentAB" id="story-target" data-lang-key="story-target">
+            .
+        </div>
+        <div class="story-content3" data-lang-key="Chap2Title">
+            บทที่ 2 - การเปิดเผยของลัทธิประหลาด
+        </div>
+        <div class="story-content4" data-lang-key="Chap2Body">
+            ระหว่างการค้นหา ลีออนถูกจับตัว และได้พบหัวหน้าหมู่บ้านชื่อ บิโตเรส เมนเดซ ผู้มีพละกำลังผิดมนุษย์ เมนเดซบอกเป็นนัยว่าลีออนถูกฉีด “ตัวอ่อนปรสิต” เข้าสู่ร่างกายหลังหนีออกมาได้ ลีออนเริ่มรู้สึกถึงการเปลี่ยนแปลงในร่างกาย เขาพบข้อมูลเบื้องต้นเกี่ยวกับปรสิตโบราณที่ชื่อว่า ลาส พลากัส ซึ่งเป็นต้นเหตุให้ชาวบ้านมีอาการคลุ้มคลั่ง
+        </div>
+        <div class="story-content5" data-lang-key="Chap3Title">
+            บทที่ 3 - โบสถ์ต้องห้ามและการพบแอชลีย์ เกรแฮม
+        </div>
+        <div class="story-content6" data-lang-key="Chap3Body">
+            ลีออนบุกเข้าโบสถ์ซึ่งเป็นสถานที่ควบคุมพิเศษของลัทธิ หลังต่อสู้กับสัตว์ประหลาดและชาวบ้านที่ถูกปรสิตครอบงำ เขาพบ แอชลีย์ เกรแฮม ในห้องกักขัง ลีออนรับเธอมาอยู่ในความคุ้มครอง ทั้งคู่ร่วมกันฝ่าฝูงชาวบ้านที่ตามไล่ล่ามาเป็นจำนวนมาก ระหว่างนั้นแอชลีย์เริ่มมีอาการแปลกๆ จากตัวอ่อนปรสิตในร่างกายเช่นกัน
+        </div>
+        <div class="story-content7" data-lang-key="Chap4Title">
+            บทที่ 4 - ป่ามรณะและสัตว์กลายพันธุ์ยักษ์
+        </div>
+        <div class="story-content8" data-lang-key="Chap4Body">
+            ลีออนและแอชลีย์เดินทางผ่านป่าลึก ทุ่งเพาะปลูก และเขตลุ่มน้ำที่เต็มไปด้วยสัตว์ประหลาด เช่นอสูรน้ำยักษ์ที่เกิดจากการทดลองปรสิตทั้งคู่เริ่มพบเอกสารที่ระบุว่า ลาส พลากัส เป็นปรสิตโบราณที่สามารถฝังตัวในมนุษย์และควบคุมพฤติกรรมได้ในที่สุด ลีออนสังหาร บิโตเรส เมนเดซ เพื่อเปิดเส้นทางเข้าสู่ปราสาทใหญ่ที่เป็นศูนย์กลางของลัทธิ
+        </div>
+        <div class="story-content9" data-lang-key="Chap5Title">
+           บทที่ 5 - ปราสาทของรามอน ซาลาซาร์ 
+        </div>
+        <div class="story-content10" data-lang-key="Chap5Body">
+           ภายในปราสาท ลีออนและแอชลีย์พบผู้นำระดับสูงของลัทธิ คือ รามอน ซาลาซาร์ เด็กหนุ่มตระกูลขุนนางผู้ถูกปรสิตครอบงำจนเสื่อมความเป็นมนุษย์ปราสาทเต็มไปด้วยกองกำลังติดเกราะ ผู้เฝ้าระวัง และสิ่งทดลองจำนวนมาก แอชลีย์ถูกจับตัวไปอีกครั้ง ทำให้ลีออนต้องลุยเดี่ยวระหว่างนั้นเขาได้พบกับ เอด้า หว่อง ผู้หญิงลึกลับที่เคยมีความเกี่ยวพันกับเขาและยังคงให้ความช่วยเหลือเป็นครั้งคราวลีออนตามไปจนถึงส่วนลึกของปราสาท เผชิญหน้ากับซาลาซาร์ที่กลายร่างเป็นสัตว์ประหลาด และสังหารเขาได้สำเร็จ 
+        </div>
+        <div class="story-content11" data-lang-key="Chap6Title">
+           บทที่ 6 - ความจริงของลาส พลากัส 
+        </div>
+        <div class="story-content12" data-lang-key="Chap6Body">
+           จากเอกสารในปราสาท ลีออนค้นพบว่าเป้าหมายของลัทธิคือการปล่อยให้แอชลีย์กลับไปยังรัฐบาล พร้อมกับปรสิตในร่าง เพื่อแพร่การควบคุมสู่ผู้นำระดับประเทศเมื่อตามหาแอชลีย์จนพบ ทั้งคู่ได้อุปกรณ์พิเศษที่สามารถกำจัดปรสิตออกจากร่าง แต่ยังต้องต่อสู้กับกองกำลังของลัทธิอย่างหนักหลังผ่านการต่อสู้เลือดสาด ลีออนกำจัดรามอน ซาลาซาร์ และมุ่งหน้าสู่เกาะฐานทัพของลัทธิ
+        </div>
+        <div class="story-content13" data-lang-key="Chap7Title">
+           บทที่ 7 - เกาะทหารและการกลับมาของแจ็ก คราวเซอร์ 
+        </div>
+        <div class="story-content14" data-lang-key="Chap7Body">
+           บนเกาะ ลีออนพบห้องทดลองลับและทหารจำนวนมากที่ใช้ปรสิตเป็นอาวุธ เขาได้พบอดีตเพื่อนร่วมหน่วยชื่อ แจ็ก คราวเซอร์ ผู้หายสาบสูญไปก่อนหน้านี้ และตอนนี้ทำงานให้กับองค์กรลึกลับคราวเซอร์เป็นผู้ลักพาตัวแอชลีย์ตั้งแต่แรก ผลักดันให้ลีออนต้องเผชิญหน้ากับเขาในสภาพที่ได้รับพลังจากปรสิตหลังการต่อสู้ที่หนักหนาสาหัส ลีออนสังหารคราวเซอร์ และนำแอชลีย์ไปใช้เครื่องฉายรังสีเพื่อกำจัดปรสิตออกจากทั้งคู่สำเร็จ 
+        </div>
+        <div class="story-content15" data-lang-key="Chap8Title">
+           บทที่ 8 - สู้ตายกับออสมุนด์ ซาด์เลอร์ 
+        </div>
+        <div class="story-content16" data-lang-key="Chap8Body">
+           ลีออนตามไปยังฐานบัญชาการหลักของลัทธิ และพบผู้นำสูงสุด ออสมุนด์ ซาด์เลอร์ ที่ได้กลายร่างเป็นสัตว์ประหลาดยักษ์การต่อสู้เป็นไปอย่างดุเดือดจนกระทั่ง เอด้า หว่อง เข้ามาช่วยและส่งอาวุธพลังทำลายสูงให้ ลีออนใช้มันจัดการซาด์เลอร์จนสิ้นชีพเอด้าตั้งเวลาระเบิดฐานเกาะ ทำให้ลีออนและแอชลีย์ต้องหลบหนีด้วยพาหนะทางน้ำ ก่อนเกาะจะถูกทำลายจนหมดสิ้น 
+        </div> 
+        <div class="story-content17" data-lang-key="FinalTitle">
+           บทสุดท้าย - ความปลอดภัยและอนาคตที่ยังคลุมเครือ 
+        </div>
+        <div class="story-content18" data-lang-key="FinalBody">
+           หลังรอดพ้นจากเกาะระเบิด ลีออนและแอชลีย์กลับสู่เขตปลอดภัย แอชลีย์แสดงความรู้สึกดีต่อเขา แต่ลีออนตอบปฏิเสธอย่างสุภาพแม้ภารกิจช่วยตัวประกันสำเร็จ แต่เบื้องหลังของ เอด้า หว่อง และองค์กรลับยังคงเป็นปริศนาที่โยงเข้าสู่เหตุการณ์ภาคต่อไป 
+        </div>
+        <div class="Character-content" none="CharacterTitle">
+           Character 
+        </div>
+        <div class="Character-content1" none="CharacterSubtitle">
+           x
+        </div>
+        <div class="Gameplay-content" none="GameplayTitle">
+           GamePlay
+        </div>
+        <div class="Gameplay-content1" data-lang-key="content1">
+           1. มุมมองและการควบคุม
+        </div>
+        <div class="Gameplay-content2" data-lang-key="content2">
+           - มุมมองข้ามไหล่ (การถ่ายภาพแบบข้ามไหล่): เป็นเกมแรกๆ ที่ใช้มุมมองบุคคลที่ 3 แบบมองข้ามไหล่ตัวละคร ทำให้เห็นศัตรูและบรรยากาศได้ชัดเจน แต่ยังเล็งยิงได้แม่นยำ
+        </div>
+        <div class="Gameplay-content3" data-lang-key="content3">
+           - การเคลื่อนที่: ในเวอร์ชัน รีเมค ลีออนสามารถเดินไปยิงไปได้ (เวอร์ชันเก่าต้องหยุดเดินเพื่อยิง) และมีการย่อตัว (หมอบ) เพื่อลอบเร้น (ย่องเบา) ได้
+        </div>
+        <div class="Gameplay-content4" data-lang-key="content4">
+           2. ระบบการต่อสู้
+        </div>
+        <div class="Gameplay-content5" data-lang-key="content5">
+           - ยิงแล้วเตะ (สตัน/ระยะประชิด): หัวใจหลักไม่ใช่แค่การยิงให้ตาย แต่เป็นการ "ยิงเพื่อเปิดจังหวะ" เช่น ยิงหัวหรือยิงขาให้ศัตรูเซ แล้วเข้าไปใช้ท่าระยะประชิด (เตะก้านคอ, จับทุ่ม) ซึ่งช่วยประหยัดกระสุนและทำดาเมจวงกว้าง
+        </div>
+        <div class="Gameplay-content6" data-lang-key="content6">
+           - การปัดป้อง (ปัดป้อง): (เฉพาะ รีเมค) ลีออนสามารถใช้มีดปัดการโจมตีของศัตรูได้ ถ้ากดถูกจังหวะจะทำให้ศัตรูชะงักได้ แต่มีดมีความทนทานและพังได้
+        </div>
+        <div class="Gameplay-content7" data-lang-key="content7">
+           3. การจัดการทรัพยากร
+        </div>
+        <div class="Gameplay-content8" data-lang-key="content8">
+           - กระเป๋าถือ: ระบบกระเป๋าเก็บของที่เป็นเอกลักษณ์ ผู้เล่นต้องบริหารพื้นที่จัดวางปืน กระสุน และยา เหมือนการเล่นเกมพัซเซิล (เตตริส)
+        </div>
+        <div class="Gameplay-content9" data-lang-key="content9">
+           - การผสมของ (การประดิษฐ์): สามารถเก็บสมุนไพร มาผสมกันเพื่อทำยาฟื้นพลัง หรือเก็บดินปืน (ดินปืน) มาผสมเป็นกระสุนชนิดต่างๆ ได้
+        </div>
+        <div class="Gameplay-content10" data-lang-key="content10">
+           4. ระบบร้านค้าและการอัปเกรด
+        </div>
+        <div class="Gameplay-content11" data-lang-key="content11">
+           - ผู้เล่นจะพบกับ พ่อค้า ตามจุดต่างๆ เพื่อซื้ออาวุธใหม่ ขายสมบัติที่เก็บได้ และอัปเกรดความแรง/ความจุแม็กกาซีนของปืน ทำให้ตัวละครเก่งขึ้นเรื่อยๆ ตามเนื้อเรื่อง
+        </div>
+        <div class="Gameplay-content12" data-lang-key="content12">
+           5. ภารกิจคุ้มกัน
+        </div>
+        <div class="Gameplay-content13" data-lang-key="content13">
+           - ผู้เล่นต้องคอยดูแล แอชลีย์ เกรแฮม ไม่ให้ถูกศัตรูจับตัวไปหรือโดนลูกหลงจากการโจมตีของเราเอง สามารถสั่งให้เธอ "ตามมา" หรือ "หลบ" (ในตู้/ล็อคเกอร์) ได้
+        </div>
+        <div id="image-slider-container" class="one-image-container">
+     
+    
+    <div id="image-track">
+        <img class="slider-image" data-lang-key="Image1" data-th-src="screenshot 2025-11-30 154713.png" data-en-src="screenshot 2025-11-30 154547.png" src="screenshot 2025-11-30 154713.png" alt="Image 1" style="opacity: 0; z-index: 0; position: absolute;">
+        <img class="slider-image" data-lang-key="Image2" data-th-src="screenshot 2025-11-30 154813.png" data-en-src="screenshot 2025-11-30 155058.png" src="screenshot 2025-11-30 154813.png" alt="Image 2" style="opacity: 0; z-index: 0; position: absolute;">
+        <img class="slider-image" data-lang-key="Image3" data-th-src="screenshot 2025-11-30 155345.png" data-en-src="screenshot 2025-11-30 155505.png" src="screenshot 2025-11-30 155345.png" alt="Image 3" style="opacity: 0; z-index: 0; position: absolute;">
+        <img class="slider-image" data-lang-key="Image4" data-th-src="screenshot 2025-11-30 155712.png" data-en-src="screenshot 2025-11-30 155823.png" src="screenshot 2025-11-30 155712.png" alt="Image 4" style="opacity: 0; z-index: 0; position: absolute;">
+        <img class="slider-image" data-lang-key="Image5" data-th-src="screenshot 2025-11-30 160126.png" data-en-src="screenshot 2025-11-30 160308.png" src="screenshot 2025-11-30 160126.png" alt="Image 5" style="opacity: 0; z-index: 0; position: absolute;">
+        <img class="slider-image" data-lang-key="Image6" data-th-src="screenshot 2025-11-30 160719.png" data-en-src="screenshot 2025-11-30 160628.png" src="screenshot 2025-11-30 160719.png" alt="Image 6" style="opacity: 0; z-index: 0; position: absolute;">
+        <img class="slider-image active" data-lang-key="Image7" data-th-src="screenshot 2025-11-30 161026.png" data-en-src="screenshot 2025-11-30 161112.png" src="screenshot 2025-11-30 161026.png" alt="Image 7" style="opacity: 1; z-index: 10; position: relative;">
+        <img class="slider-image" data-lang-key="Image8" data-th-src="screenshot 2025-11-30 161332.png" data-en-src="screenshot 2025-11-30 161410.png" src="screenshot 2025-11-30 161332.png" alt="Image 8" style="opacity: 0; z-index: 0; position: absolute;">
+        <img class="slider-image" data-lang-key="Image9" data-th-src="screenshot 2025-11-30 161519.png" data-en-src="screenshot 2025-11-30 161548.png" src="screenshot 2025-11-30 161519.png" alt="Image 9" style="opacity: 0; z-index: 0; position: absolute;">
+        <img class="slider-image" data-lang-key="Image10" data-th-src="screenshot 2025-11-30 161652.png" data-en-src="screenshot 2025-11-30 161726.png" src="screenshot 2025-11-30 161652.png" alt="Image 10" style="opacity: 0; z-index: 0; position: absolute;">
+    </div>
+
+    
+    <button class="slider-btn next-btn">❯</button>"
+    <button class="slider-btn prev-btn">❮</button>
+</div>
+    
+
+    <button class="text-button">GamePlay</button>
+
+    <button class="text-button1">Character</button>
+
+    <button class="text-button2">Story</button>
+
+    <button class="text-button3" id="lang-toggle-button">TH/EN</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const translations = {
+        currentLang: 'th',
+        th: {
+            Intro: 'ในปี 2004 ลีออน เอส เคนเนดี อดีตตำรวจผู้รอดชีวิตจากเหตุการณ์เมืองแร็คคูน และปัจจุบันเป็นเจ้าหน้าที่พิเศษของรัฐบาลสหรัฐ ได้รับมอบหมายให้เดินทางไปยังประเทศสเปนในภารกิจที่ไม่มีใครอยากทำ นั่นคือ การออกตามหาแอชลีย์ เกรแฮม บุตรสาวของประธานาธิบดีที่ถูกลักพาตัวไป',
+            Chap1Title: 'บทที่ 1 - หมู่บ้านต้องคำสาป',
+            Chap1Body: 'ลีออน เอส เคนเนดี ถูกรัฐบาลส่งให้มาช่วยตัวประกันคือ แอชลีย์ เกรแฮม ลูกสาวประธานาธิบดีสหรัฐ เขาเดินทางมายังหมู่บ้านห่างไกลในยุโรป พร้อมตำรวจท้องถิ่นแต่ถูกชาวบ้านที่คลุ้มคลั่งโจมตีอย่างไร้เหตุผล ลีออนต้องหลบหนีและต่อสู้จนกระทั่งเสียงระฆังของโบสถ์ดังขึ้น ชาวบ้านทุกคนหยุดโจมตีพร้อมกันราวกับถูกควบคุม ทำให้ลีออนเริ่มสงสัยว่าในหมู่บ้านนี้มีบางสิ่งเหนือธรรมชาติปกคลุมอยู่',
+            Chap2Title: 'บทที่ 2 - การเปิดเผยของลัทธิประหลาด',
+            Chap2Body: 'ระหว่างการค้นหา ลีออนถูกจับตัว และได้พบหัวหน้าหมู่บ้านชื่อ บิโตเรส เมนเดซ ผู้มีพละกำลังผิดมนุษย์ เมนเดซบอกเป็นนัยว่าลีออนถูกฉีด “ตัวอ่อนปรสิต” เข้าสู่ร่างกายหลังหนีออกมาได้ ลีออนเริ่มรู้สึกถึงการเปลี่ยนแปลงในร่างกาย เขาพบข้อมูลเบื้องต้นเกี่ยวกับปรสิตโบราณที่ชื่อว่า ลาส พลากัส ซึ่งเป็นต้นเหตุให้ชาวบ้านมีอาการคลุ้มคลั่ง',
+            Chap3Title: 'บทที่ 3 - โบสถ์ต้องห้ามและการพบแอชลีย์ เกรแฮม',
+            Chap3Body: 'ลีออนบุกเข้าโบสถ์ซึ่งเป็นสถานที่ควบคุมพิเศษของลัทธิ หลังต่อสู้กับสัตว์ประหลาดและชาวบ้านที่ถูกปรสิตครอบงำ เขาพบ แอชลีย์ เกรแฮม ในห้องกักขัง ลีออนรับเธอมาอยู่ในความคุ้มครอง ทั้งคู่ร่วมกันฝ่าฝูงชาวบ้านที่ตามไล่ล่ามาเป็นจำนวนมาก ระหว่างนั้นแอชลีย์เริ่มมีอาการแปลกๆ จากตัวอ่อนปรสิตในร่างกายเช่นกัน',
+            Chap4Title: 'บทที่ 4 - ป่ามรณะและสัตว์กลายพันธุ์ยักษ์',
+            Chap4Body: 'ลีออนและแอชลีย์เดินทางผ่านป่าลึก ทุ่งเพาะปลูก และเขตลุ่มน้ำที่เต็มไปด้วยสัตว์ประหลาด เช่นอสูรน้ำยักษ์ที่เกิดจากการทดลองปรสิตทั้งคู่เริ่มพบเอกสารที่ระบุว่า ลาส พลากัส เป็นปรสิตโบราณที่สามารถฝังตัวในมนุษย์และควบคุมพฤติกรรมได้ในที่สุด ลีออนสังหาร บิโตเรส เมนเดซ เพื่อเปิดเส้นทางเข้าสู่ปราสาทใหญ่ที่เป็นศูนย์กลางของลัทธิ',
+            Chap5Title: 'บทที่ 5 - ปราสาทของรามอน ซาลาซาร์',
+            Chap5Body: 'ภายในปราสาท ลีออนและแอชลีย์พบผู้นำระดับสูงของลัทธิ คือ รามอน ซาลาซาร์ เด็กหนุ่มตระกูลขุนนางผู้ถูกปรสิตครอบงำจนเสื่อมความเป็นมนุษย์ปราสาทเต็มไปด้วยกองกำลังติดเกราะ ผู้เฝ้าระวัง และสิ่งทดลองจำนวนมาก แอชลีย์ถูกจับตัวไปอีกครั้ง ทำให้ลีออนต้องลุยเดี่ยวระหว่างนั้นเขาได้พบกับ เอด้า หว่อง ผู้หญิงลึกลับที่เคยมีความเกี่ยวพันกับเขาและยังคงให้ความช่วยเหลือเป็นครั้งคราวลีออนตามไปจนถึงส่วนลึกของปราสาท เผชิญหน้ากับซาลาซาร์ที่กลายร่างเป็นสัตว์ประหลาด และสังหารเขาได้สำเร็จ',
+            Chap6Title: 'บทที่ 6 - ความจริงของลาส พลากัส',
+            Chap6Body: 'จากเอกสารในปราสาท ลีออนค้นพบว่าเป้าหมายของลัทธิคือการปล่อยให้แอชลีย์กลับไปยังรัฐบาล พร้อมกับปรสิตในร่าง เพื่อแพร่การควบคุมสู่ผู้นำระดับประเทศเมื่อตามหาแอชลีย์จนพบ ทั้งคู่ได้อุปกรณ์พิเศษที่สามารถกำจัดปรสิตออกจากร่าง แต่ยังต้องต่อสู้กับกองกำลังของลัทธิอย่างหนักหลังผ่านการต่อสู้เลือดสาด ลีออนกำจัดรามอน ซาลาซาร์ และมุ่งหน้าสู่เกาะฐานทัพของลัทธิ',
+            Chap7Title: 'บทที่ 7 - เกาะทหารและการกลับมาของแจ็ก คราวเซอร์',
+            Chap7Body: 'บนเกาะ ลีออนพบห้องทดลองลับและทหารจำนวนมากที่ใช้ปรสิตเป็นอาวุธ เขาได้พบอดีตเพื่อนร่วมหน่วยชื่อ แจ็ก คราวเซอร์ ผู้หายสาบสูญไปก่อนหน้านี้ และตอนนี้ทำงานให้กับองค์กรลึกลับคราวเซอร์เป็นผู้ลักพาตัวแอชลีย์ตั้งแต่แรก ผลักดันให้ลีออนต้องเผชิญหน้ากับเขาในสภาพที่ได้รับพลังจากปรสิตหลังการต่อสู้ที่หนักหนาสาหัส ลีออนสังหารคราวเซอร์ และนำแอชลีย์ไปใช้เครื่องฉายรังสีเพื่อกำจัดปรสิตออกจากทั้งคู่สำเร็จ',
+            Chap8Title: 'บทที่ 8 - สู้ตายกับออสมุนด์ ซาด์เลอร์',
+            Chap8Body: 'ลีออนตามไปยังฐานบัญชาการหลักของลัทธิ และพบผู้นำสูงสุด ออสมุนด์ ซาด์เลอร์ ที่ได้กลายร่างเป็นสัตว์ประหลาดยักษ์การต่อสู้เป็นไปอย่างดุเดือดจนกระทั่ง เอด้า หว่อง เข้ามาช่วยและส่งอาวุธพลังทำลายสูงให้ ลีออนใช้มันจัดการซาด์เลอร์จนสิ้นชีพเอด้าตั้งเวลาระเบิดฐานเกาะ ทำให้ลีออนและแอชลีย์ต้องหลบหนีด้วยพาหนะทางน้ำ ก่อนเกาะจะถูกทำลายจนหมดสิ้น',
+            FinalTitle: 'บทสุดท้าย - ความปลอดภัยและอนาคตที่ยังคลุมเครือ',
+            FinalBody: 'หลังรอดพ้นจากเกาะระเบิด ลีออนและแอชลีย์กลับสู่เขตปลอดภัย แอชลีย์แสดงความรู้สึกดีต่อเขา แต่ลีออนตอบปฏิเสธอย่างสุภาพแม้ภารกิจช่วยตัวประกันสำเร็จ แต่เบื้องหลังของ เอด้า หว่อง และองค์กรลับยังคงเป็นปริศนาที่โยงเข้าสู่เหตุการณ์ภาคต่อไป',
+            content1: '1. มุมมองและการควบคุม',
+            content2: '- มุมมองข้ามไหล่ (การถ่ายภาพแบบข้ามไหล่): เป็นเกมแรกๆ ที่ใช้มุมมองบุคคลที่ 3 แบบมองข้ามไหล่ตัวละคร ทำให้เห็นศัตรูและบรรยากาศได้ชัดเจน แต่ยังเล็งยิงได้แม่นยำ',
+            content3: '- การเคลื่อนที่: ในเวอร์ชัน รีเมค ลีออนสามารถเดินไปยิงไปได้ (เวอร์ชันเก่าต้องหยุดเดินเพื่อยิง) และมีการย่อตัว (หมอบ) เพื่อลอบเร้น (ย่องเบา) ได้',
+            content4: '2. ระบบการต่อสู้',
+            content5: '- ยิงแล้วเตะ (สตัน/ระยะประชิด): หัวใจหลักไม่ใช่แค่การยิงให้ตาย แต่เป็นการ "ยิงเพื่อเปิดจังหวะ" เช่น ยิงหัวหรือยิงขาให้ศัตรูเซ แล้วเข้าไปใช้ท่าระยะประชิด (เตะก้านคอ, จับทุ่ม) ซึ่งช่วยประหยัดกระสุนและทำดาเมจวงกว้าง',
+            content6: '- การปัดป้อง (ปัดป้อง): (เฉพาะ รีเมค) ลีออนสามารถใช้มีดปัดการโจมตีของศัตรูได้ ถ้ากดถูกจังหวะจะทำให้ศัตรูชะงักได้ แต่มีดมีความทนทานและพังได้',
+            content7: '3. การจัดการทรัพยากร',
+            content8: '- กระเป๋าถือ: ระบบกระเป๋าเก็บของที่เป็นเอกลักษณ์ ผู้เล่นต้องบริหารพื้นที่จัดวางปืน กระสุน และยา เหมือนการเล่นเกมพัซเซิล (เตตริส)',
+            content9: '- การผสมของ (การประดิษฐ์): สามารถเก็บสมุนไพร มาผสมกันเพื่อทำยาฟื้นพลัง หรือเก็บดินปืน (ดินปืน) มาผสมเป็นกระสุนชนิดต่างๆ ได้',
+            content10: '4. ระบบร้านค้าและการอัปเกรด',
+            content11: '- ผู้เล่นจะพบกับ พ่อค้า ตามจุดต่างๆ เพื่อซื้ออาวุธใหม่ ขายสมบัติที่เก็บได้ และอัปเกรดความแรง/ความจุแม็กกาซีนของปืน ทำให้ตัวละครเก่งขึ้นเรื่อยๆ ตามเนื้อเรื่อง',
+            content12: '5. ภารกิจคุ้มกัน',
+            content13: '- ผู้เล่นต้องคอยดูแล แอชลีย์ เกรแฮม ไม่ให้ถูกศัตรูจับตัวไปหรือโดนลูกหลงจากการโจมตีของเราเอง สามารถสั่งให้เธอ "ตามมา" หรือ "หลบ" (ในตู้/ล็อคเกอร์) ได้',
+            GameplayNav: 'GamePlay',
+            CharacterNav: 'Character',
+            StoryNav: 'Story',
+            CharacterTitle: 'Character'
+        },
+        en: {
+            Intro: 'In 2004, Leon S. Kennedy, a former police officer and survivor of the Raccoon City incident, now a special agent for the US government, is tasked with a difficult mission in Spain: to find and rescue the President’s daughter, Ashley Graham, who has been kidnapped.',
+            Chap1Title: 'Chapter 1 - The Cursed Village',
+            Chap1Body: 'Leon S. Kennedy is sent by the government to rescue Ashley Graham, the US President\'s daughter. He travels to a remote European village with local police but is immediately attacked by frenzied villagers for no reason. Leon must fight and escape until a church bell rings, causing all the villagers to stop their attack simultaneously, as if controlled. This leads Leon to suspect that something supernatural is covering this village.',
+            Chap2Title: 'Chapter 2 - The Cult\'s Revelation',
+            Chap2Body: 'During his search, Leon is captured and meets the village chief, Bitores Mendez, a man with superhuman strength. Mendez implies that Leon was injected with a "larval parasite" after escaping. Leon begins to feel changes in his body. He finds initial information about an ancient parasite called Las Plagas, which is the cause of the villagers\' frenzied behavior.',
+            Chap3Title: 'Chapter 3 - The Forbidden Church and Ashley Graham',
+            Chap3Body: 'Leon breaks into the church, a special confinement area of the cult. After fighting monsters and parasite-controlled villagers, he finds Ashley Graham locked in a cell. Leon takes her under his protection. They both struggle to fight off the chasing villagers. Ashley also begins to show strange symptoms from the larval parasite in her body.',
+            Chap4Title: 'Chapter 4 - The Deadly Forest and Giant Mutants',
+            Chap4Body: 'Leon and Ashley travel through a deep forest, farmlands, and a swampland filled with monsters, such as a giant water creature resulting from parasite experiments. They start finding documents indicating that Las Plagas is an ancient parasite capable of embedding itself in humans and controlling their behavior. Leon kills Bitores Mendez to open the path to the large castle, the cult’s central stronghold.',
+            Chap5Title: 'Chapter 5 - Ramón Salazar\'s Castle',
+            Chap5Body: 'Inside the castle, Leon and Ashley encounter the cult’s high-ranking leader, Ramón Salazar, a young nobleman whose body has been warped by the parasite. The castle is full of armored forces, guards, and numerous test subjects. Ashley is captured again, forcing Leon to go solo. During his search, he reunites with Ada Wong, a mysterious woman from his past who occasionally provides assistance. Leon tracks Ashley to the deep parts of the castle, confronts Salazar, who mutates into a monster, and successfully kills him.',
+            Chap6Title: 'Chapter 6 - The Truth of Las Plagas',
+            Chap6Body: 'From documents in the castle, Leon discovers that the cult’s goal is to allow Ashley to return to the government with the parasite in her body to spread control to national leaders. After locating Ashley, they obtain a special device that can remove the parasites from their bodies, but they still have to fight heavily against the cult\'s forces. After a bloody battle, Leon defeats Ramón Salazar and heads toward the cult\'s island base.',
+            Chap7Title: 'Chapter 7 - The Military Island and Jack Krauser\'s Return',
+            Chap7Body: 'On the island, Leon finds a secret laboratory and many soldiers using the parasite as a weapon. He encounters his former unit partner, Jack Krauser, who had previously gone missing and is now working for a secret organization. Krauser was the one who kidnapped Ashley in the first place, forcing Leon to face him in a parasite-enhanced state. After a severe battle, Leon defeats Krauser and takes Ashley to a radiation device to successfully remove the parasites from both of them.',
+            Chap8Title: 'Chapter 8 - Final Battle with Osmund Saddler',
+            Chap8Body: 'Leon tracks the cult to their main headquarters and finds the supreme leader, Osmund Saddler, who has mutated into a giant monster. The battle is fierce until Ada Wong intervenes, providing Leon with a high-powered weapon. Leon uses it to finally kill Saddler. Ada sets the island base to self-destruct, forcing Leon and Ashley to escape by water vehicle before the island is completely destroyed.',
+            FinalTitle: 'Final Chapter - Safety and Uncertain Future',
+            FinalBody: 'After escaping the exploding island, Leon and Ashley return to a safe zone. Ashley expresses affection for him, but Leon politely declines. Although the hostage rescue mission is successful, the true intentions of Ada Wong and the secret organization remain a mystery, hinting at future events.',
+            content1: '1. Perspective and Controls',
+            content2: '- Over-the-Shoulder View: One of the first games to use a third-person over-the-shoulder perspective, allowing clear visibility of enemies and the environment while maintaining accurate aiming.',
+            content3: '- Movement: In the Remake version, Leon can walk and shoot simultaneously (unlike the original version where he had to stop to shoot) and can crouch for stealth.',
+            content4: '2. Combat System',
+            content5: '- Shoot and Kick (Stun/Melee): The core mechanic is not just about shooting to kill but "shooting to create openings," such as shooting the head or legs to stagger enemies, allowing for melee moves (neck kicks, throws) that save ammo and deal area damage.',
+            content6: '- Parrying: (Remake only) Leon can use a knife to parry enemy attacks. If timed correctly, it can stun the enemy, but the knife has durability and can break.',
+            content7: '3. Resource Management',
+            content8: '- Inventory: A unique inventory system where players must manage space for guns, ammo, and herbs, similar to playing a puzzle game (Tetris).',
+            content9: '- Item Crafting: Players can collect herbs to combine into healing items or gather gunpowder to craft different types of ammunition.',
+            content10: '4. Shop and Upgrades System',
+            content11: 'Players will meet merchants at various locations to buy new weapons, sell collected treasures, and upgrade their guns power/magazine capacity, making their characters more and more powerful.',
+            content12: '5. Escort Missions', 
+            content13: '- Players must take care of Ashley Graham, ensuring she is not captured by enemies or hit by stray attacks. Players can command her to "follow" or "hide" (in lockers).',
+            GameplayNav: 'GamePlay',
+            CharacterNav: 'Character',
+            StoryNav: 'Story',
+            CharacterTitle: 'Character'
+        }
+    };
+
+    const images = document.querySelectorAll('#image-track .slider-image');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const sliderContainer = document.getElementById('image-slider-container');
+    let currentImageIndex = 0;
+    const slideInterval = 5000;
+    let autoSlide;
+
+    function showImage(index) {
+        if (index >= images.length) {
+            currentImageIndex = 0;
+        } else if (index < 0) {
+            currentImageIndex = images.length - 1;
+        } else {
+            currentImageIndex = index;
+        }
+
+        images.forEach(img => {
+            img.classList.remove('active');
+            img.style.opacity = '0';
+            img.style.zIndex = '0';
+            img.style.position = 'absolute'; 
+        });
+
+        if (images[currentImageIndex]) {
+            const activeImg = images[currentImageIndex];
+            activeImg.classList.add('active');
+            activeImg.style.opacity = '1';
+            activeImg.style.zIndex = '10';
+            activeImg.style.position = 'relative'; 
+        }
+    }
+
+    function startAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(() => {
+            showImage(currentImageIndex + 1);
+        }, slideInterval);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlide);
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            showImage(currentImageIndex + 1);
+            startAutoSlide();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            showImage(currentImageIndex - 1);
+            startAutoSlide();
+        });
+    }
+
+    showImage(0);
+    startAutoSlide();
+
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    const langToggleButton = document.querySelector('.text-button3');
+    const elementsToTranslate = document.querySelectorAll('[data-lang-key]');
+
+    function updateImages(lang) {
+        images.forEach(img => {
+            const newSrc = img.getAttribute(lang === 'th' ? 'data-th-src' : 'data-en-src');
+            if (newSrc) {
+                img.src = newSrc;
+            }
+        });
+    }
+
+    function toggleLanguage() {
+        const newLang = (translations.currentLang === 'en' ? 'th' : 'en');
+        const langData = translations[newLang];
+        
+        elementsToTranslate.forEach(element => {
+            element.classList.add('fade-out');
+        });
+
+        setTimeout(() => {
+            elementsToTranslate.forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (langData[key]) {
+                    element.textContent = langData[key];
+                }
+                element.classList.remove('fade-out');
+            });
+
+            updateImages(newLang);
+
+            langToggleButton.textContent = (newLang === 'th' ? 'TH/EN' : 'EN/TH');
+            translations.currentLang = newLang;
+
+        }, 250);
+    }
+
+    if (langToggleButton) {
+        langToggleButton.addEventListener('click', toggleLanguage);
+    }
+
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.classList.contains('clicked-scale')) return;
+            this.classList.add('clicked-scale');
+            setTimeout(() => {
+                this.classList.remove('clicked-scale');
+            }, 300); 
+        });
+    });
+
+
+    const storyBtn = document.querySelector('.text-button2');
+    const storyTarget = document.getElementById('story-target');
+    if (storyBtn && storyTarget) {
+        storyBtn.addEventListener('click', function() {
+            storyTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
+
+    const CharacterBtn = document.querySelector('.text-button1');
+    const CharacterTarget = document.querySelector('.Character-content1');
+    if (CharacterBtn && CharacterTarget) {
+        CharacterBtn.addEventListener('click', function() {
+            CharacterTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
+});
+    const gameplayBtn = document.querySelector('.text-button');
+    const gameplayTarget = document.querySelector('.Gameplay-content6');
+    if (gameplayBtn && gameplayTarget) {
+        gameplayBtn.addEventListener('click', function() {
+            gameplayTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
+</script>
+    
+
+</div></div></body></html>
